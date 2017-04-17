@@ -1,7 +1,7 @@
 /**
 * @file 脚本支持
 * @author  hejieye
-* @time  20170106
+* @time  20170417
 * @version 1.3.2
 */
 define(function (require) {
