@@ -252,8 +252,9 @@ define(function (require) {
         },
         // 好万家导流
         guideData: function () {
-            var urlf = 'https://mipp.iask.cn/t/mipdf?t=fous';
-            var urlr = 'https://mipp.iask.cn/t/mipdf?t=recom';
+            var categoryId = $('.parent-CategoryId').attr('categoryId');
+            var urlf = 'https://mipp.iask.cn/t/mipdf?t=fous&categoryId=' + categoryId;
+            var urlr = 'https://mipp.iask.cn/t/mipdf?t=recom&categoryId=' + categoryId;
             try {
                 $.ajax({
                     type: 'GET',
