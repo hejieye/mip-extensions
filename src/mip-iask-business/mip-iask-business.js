@@ -221,6 +221,9 @@ define(function (require) {
         $('.mip_dl_tbtj').remove();
         $('.mip_as_djgz').remove();
         $('.mip_as_wzss').remove();
+        $('.load_recom_red').remove();
+        $('.load_today_focus').remove();
+        $('.mip_ad_xgzs_div').remove();
         $('.mip_as_bottm_div').empty();
     };
     var youLai = function (data) {
@@ -267,6 +270,7 @@ define(function (require) {
                 $('.youlai_feed_div .youlai_feed_use_name').html(obj2.companyName);
                 $('.youlai_feed_div .youlai_feed_txt').text(obj.describe);
                 $('.youlai_feed_div a').attr('href', obj.picLink);
+                $('.youlai_feed_div a').attr('class', 'href_log');
                 $('.youlai_feed_div a').attr('data-stats-baidu-obj', statsBaidu);
                 $('.youlai_feed_div .youlai_feed').each(function () {
                     $(this).append('<mip-img class="mip-img" src="' + picList[i++] + '"></mip-img>');
@@ -290,6 +294,7 @@ define(function (require) {
         advLogInfoClick();
     };
     var tianZhu = function (data) {
+        removeBaiduAd();
         var statsBaidu = 'data-stats-baidu-obj="%7B%22type%22:%22click%22,%22data%22:%22%5B';
         statsBaidu += '_trackEvent\',%20\'M_AD_300\',%20\'skip\',%20\'M_AD_300_ad\'%5D%22%7D"';
         $('.mip_as_bottm_div').empty();
@@ -333,7 +338,7 @@ define(function (require) {
             type = 'HSQA';
         }
         else if (sources === 'COOPERATE_XINYUHENG') {
-            type = 'XYH';
+            return;
         }
         else if (sources === 'COOPERATE_YOULAI') {
             type = 'YL';
